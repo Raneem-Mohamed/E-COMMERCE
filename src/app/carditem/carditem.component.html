@@ -1,0 +1,19 @@
+<!-- <p>carditem works!</p> -->
+<div class="container my-5">
+
+  <div class="card" style="width: 18rem; ">
+    <img src="{{cardtitle.image}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{cardtitle.title}}</h5> <br>
+      <h2>{{cardtitle.price |currency}}</h2><br>
+      <h3>{{cardtitle.category}}</h3><br>
+      <!-- <h4 ngClass="{'text-success':cardtitle.count !== '0'}" > {{cardtitle.count}}</h4><br> -->
+      <h4 [ngStyle]="{'background-color': cardtitle.rating.count !== '0' ? 'green' : 'red'}">
+        {{cardtitle.rating.count | stock}}</h4><br>
+      <h3>{{cardtitle.rate}}</h3><br>
+      <p class="card-text">{{cardtitle.description}}</p>
+      <a href="#" class="btn btn-primary">Add to cart</a>
+    </div>
+  </div>
+
+</div>

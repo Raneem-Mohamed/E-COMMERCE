@@ -1,0 +1,48 @@
+<form class="container" #postform="ngForm" (ngSubmit)="submitform(postform.value)">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      required
+      ngModel
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+      name="mail"
+      #useremail="ngModel"
+    />
+    <small class="text-danger" *ngIf="useremail.touched && !useremail.valid"
+      >
+      <div *ngIf="useremail.errors?.['required']" > this filed is required</div>
+      
+      
+      </small>
+    <div id="emailHelp" class="form-text">
+      We'll never share your email with anyone else.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="exampleInputPassword1"
+      required
+      ngModel
+      name="pass"
+      #userpass="ngModel"
+    />
+    <small class="text-danger" *ngIf="userpass.touched && !useremail.valid"
+      >
+      <div *ngIf="userpass.errors?.['required']" > this filed is required</div>
+      
+      
+      </small>
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit"  class="btn btn-primary">Submit</button>
+</form>

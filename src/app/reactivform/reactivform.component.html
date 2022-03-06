@@ -1,0 +1,66 @@
+<!-- <p>reactivform works!</p> -->
+
+<form class="container" [formGroup]="postform" (ngSubmit)="submitpostform()">
+  <div class="mb-3">
+    <label for="First-name" class="form-label">First Name</label>
+    <input type="text" class="form-control" id="First-name" aria-describedby="First-name" formControlName="firstname" />
+    <small id="First-name" class="text-danger" *ngIf="
+        getformcontrols['firstname'].touched &&
+        getformcontrols['firstname'].invalid
+      ">
+      <div *ngIf="getformcontrols['firstname'].errors?.['required']"> this filed is required</div>
+
+    </small>
+  </div>
+  <div class="mb-3">
+    <label for="Last-name" class="form-label">Last Name</label>
+    <input type="text" class="form-control" id="Last-name" aria-describedby="Last-name" formControlName="lastname" />
+    <small id="Last-name" class="text-danger" *ngIf="
+        getformcontrols['lastname'].touched &&
+        getformcontrols['lastname'].invalid
+      ">
+      <div *ngIf="getformcontrols['lastname'].errors?.['required']"> this filed is required</div>
+
+    </small>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      formControlName="email" />
+    <small id="exampleInputEmail1" class="text-danger" *ngIf="
+      getformcontrols['email'].touched &&
+      getformcontrols['email'].invalid
+    ">
+      <div *ngIf="getformcontrols['email'].errors?.['required']"> this filed is required</div>
+
+    </small>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" formControlName="pass" />
+    <small id="exampleInputPassword1" class="text-danger" *ngIf="
+    getformcontrols['pass'].touched &&
+    getformcontrols['pass'].invalid
+  ">
+      <div *ngIf="getformcontrols['pass'].errors?.['required']"> this filed is required</div>
+
+    </small>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword2" class="form-label"> Confirm Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword2" formControlName="comfpass" />
+    <small id="exampleInputPassword2" class="text-danger" *ngIf="
+    getformcontrols['comfpass'].touched &&
+    getformcontrols['comfpass'].invalid
+  ">
+      <div *ngIf="getformcontrols['comfpass'].errors?.['required']"> this filed is required</div>
+
+    </small>
+  </div>
+
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
